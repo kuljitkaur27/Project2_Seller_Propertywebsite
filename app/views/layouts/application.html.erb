@@ -10,7 +10,11 @@
   </head>
 
   <body>
-    
+    <nav>
+    <%= link_to "Home", root_path %>
+    |
+    <%= link_to "Seller_Sign_In", seller_new_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>

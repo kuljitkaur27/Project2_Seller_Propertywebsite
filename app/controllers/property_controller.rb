@@ -1,6 +1,6 @@
 class PropertyController < ApplicationController
   def index
-    @propertys = Property.all
+    @properties = Property.all
   end
 
   def new
@@ -18,7 +18,7 @@ class PropertyController < ApplicationController
 
   def update
     property = Property.find params[:id]
-    Property.update property_params
+    # Property.update property_params
     redirect_to property
   end
 
@@ -29,6 +29,6 @@ class PropertyController < ApplicationController
   def destroy
     property = Property.find params[:id]
     Property.destroy
-    redirect_to propertys_path
+    redirect_to property_path
   end
 end

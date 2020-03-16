@@ -1,10 +1,10 @@
 class SellerController < ApplicationController
   def index
-    @sellers = Seller.all
+    @seller = Seller.all
   end
 
   def new
-    @sellers = Seller.new
+    @seller = Seller.new
   end
 
   def create
