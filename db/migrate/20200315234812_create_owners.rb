@@ -4,6 +4,7 @@ class CreateOwners < ActiveRecord::Migration[5.2]
       t.text :name
       t.text :email
       t.text :phone_no
+      t.text :seller_id
     end
   end
 end

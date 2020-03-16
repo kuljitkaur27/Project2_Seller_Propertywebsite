@@ -31,13 +31,14 @@ ActiveRecord::Schema.define(version: 2020_03_16_010418) do
     t.text "name"
     t.text "email"
     t.text "phone_no"
+    t.text "seller_id"
   end
 
   create_table "properties", force: :cascade do |t|
     t.text "location"
-    t.float "price"
+    t.integer "price"
     t.string "construction_year"
-    t.string "type"
+    t.string "property_type"
     t.integer "bedrooms"
     t.integer "bathrooms"
     t.integer "car_spaces"
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_03_16_010418) do
     t.text "image1"
     t.text "image2"
     t.text "image3"
+    t.text "seller_id"
   end
 
   create_table "sellers", force: :cascade do |t|
