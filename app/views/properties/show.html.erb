@@ -4,7 +4,20 @@
 <%= image_tag(@property.image1) if @property.image1.present?%>
 <%= image_tag(@property.image2) if @property.image2.present?%>
 <%= image_tag(@property.image3) if @property.image3.present?%>
+<ul>
+  <li>Location             : <%= @property.location %></li>
+  <li>Price                : <%= @property.price %></li>
+  <li>Construction Year    : <%= @property.price %></li>
+  <li>Type                 : <%= @property.property_type %></li>
+  <li>Bedrooms             : <%= @property.bedrooms %></li>
+  <li>Bathrooms            : <%= @property.bathrooms %></li>
+  <li>CarSpaces            : <%= @property.car_spaces %></li>
+  <li>Landsize             : <%= @property.landsize %></li>
+  <li>Bonus Features       : <%= @property.bonus_features %></li>
+  <li>Status               : <%= @property.status %></li>
+</ul>
 
+<h3>Contact Details......</h3>
 <% if @property.seller.present?  %>
 <h2> Seller <%= @property.seller.name %> Details ....</h2>
 <ul>

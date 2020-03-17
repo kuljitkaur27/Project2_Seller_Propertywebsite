@@ -27,13 +27,13 @@ class SellersController < ApplicationController
   end
 
   def destroy
-    @seller = Seller.find params[:id]
-    @seller.destroy
+    seller = Seller.find params[:id]
+    seller.destroy
     redirect_to sellers_path
   end
-end
 
-private
- def seller_params
-   params.require(:seller).permit( :name, :phone_no, :email, :password_digest)
- end
+  private
+   def seller_params
+     params.require(:seller).permit(:name, :phone_no, :email, :password_digest)
+   end
+end
