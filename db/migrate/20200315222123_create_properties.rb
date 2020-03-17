@@ -15,7 +15,7 @@ class CreateProperties < ActiveRecord::Migration[5.2]
       t.text    :image1
       t.text    :image2
       t.text    :image3
-      t.text    :seller_id
+      t.integer :seller_id
     end
   end
 end

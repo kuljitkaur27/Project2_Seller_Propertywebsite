@@ -1,6 +1,6 @@
-class SellerController < ApplicationController
+class SellersController < ApplicationController
   def index
-    @seller = Seller.all
+    @sellers = Seller.all
   end
 
   def new
@@ -32,3 +32,8 @@ class SellerController < ApplicationController
     reditect_to seller_path
   end
 end
+
+private
+ def seller_params
+   params.require(:seller).permit( :name, :phone_no, :email)
+ end

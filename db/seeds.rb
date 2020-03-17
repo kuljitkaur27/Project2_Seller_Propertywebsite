@@ -1,7 +1,7 @@
 Seller.destroy_all
 
-s1 =  Seller.create :name => "John", :email => "John@ga.co", :phone_no => "0405060708"
-s2 =  Seller.create :name => "Kuljit", :email => "kuljitkauremail@gmail.com", :phone_no => "0423456782"
+s1 =  Seller.create :name => "John", :email => "John@ga.co", :phone_no => "0405060708", :password_digest => "Hello123"
+s2 =  Seller.create :name => "Kuljit", :email => "kuljitkauremail@gmail.com", :phone_no => "0423456782" , :password_digest => "sayhello123"
 
 puts "#{ Seller.count } Sellers created"
 
@@ -40,5 +40,5 @@ puts "Sellers and Owners"
 s1.owners << o1 << o2
 
 puts "Buyers and Properties"
-b1.propertries << p1 << p2
+b1.properties << p1 << p2
 p1.buyers << b1 << b2

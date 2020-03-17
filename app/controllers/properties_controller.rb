@@ -1,4 +1,4 @@
-class PropertyController < ApplicationController
+class PropertiesController < ApplicationController
   def index
     @properties = Property.all
   end
@@ -18,7 +18,7 @@ class PropertyController < ApplicationController
 
   def update
     property = Property.find params[:id]
-    # Property.update property_params
+    Property.update property_params
     redirect_to property
   end
 
@@ -31,4 +31,9 @@ class PropertyController < ApplicationController
     Property.destroy
     redirect_to property_path
   end
+end
+
+private
+def property_params
+  params.require(:property).permit(:location, :price, :construction_year, :property_type, :bedrooms, :bathrooms, :car_spaces, :landsize, :bonus_features, :status, :main_image, :image1, :image2, :image3, :seller_id)
 end

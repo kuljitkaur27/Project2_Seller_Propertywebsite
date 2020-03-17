@@ -1,2 +1,17 @@
-<h1>Seller#show</h1>
-<p>Find me in app/views/seller/show.html.erb</p>
+<h1><%= @seller.name %> Details.....</h1>
+
+<h2>Personal Information :</h2>
+<ul>
+  <li>Phone_no      : <%= @seller.phone_no %></li>
+  <li>Email address : <%= @seller.email %></li>
+</ul>
+
+<h2>Open Properties :</h2>
+<% @seller.properties.each do |property| %>
+  <%= link_to image_tag(property.main_image), edit_property_path(property) %>
+<% end %>
+
+<div class="controls">
+  <%= button_to 'Edit #{ @seller.name }', edit_seller_path(@seller) %>
+  <%= button_to "Delete #{ @seller.name }", @seller, :method => 'delete' %>
+</div>

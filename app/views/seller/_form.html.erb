@@ -1,9 +1,12 @@
 <%= form_for @seller do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, :required => true, :autofocus => true %>
-  <%= f.label :Email %>
-  <%= f.text_field :email %>
   <%= f.label :Phone %>
   <%= f.text_field :phone_no %>
+  <%= f.label :Email %>
+  <%= f.text_field :email %>
+  <%= f.label :Password %>
+  <%= f.text_field :password_digest %>
+
 <%= f.submit %>
 <% end %>

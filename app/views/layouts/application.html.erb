@@ -13,7 +13,11 @@
     <nav>
     <%= link_to "Home", root_path %>
     |
-    <%= link_to "Seller_Sign_In", seller_new_path %>
+    <%= link_to "Sellers", sellers_path %>
+    <%= link_to "New Seller", new_seller_path %>
+    |
+    <%= link_to "Properties", properties_path %>
+    <%= link_to "New Property", new_property_path %>
     </nav>
     <%= yield %>
   </body>

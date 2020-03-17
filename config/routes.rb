@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/list'
   # get 'pages/search'
   # get 'property/index'
   # get 'property/new'

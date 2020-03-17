@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_03_16_010418) do
     t.text "name"
     t.text "email"
     t.text "phone_no"
-    t.text "seller_id"
+    t.integer "seller_id"
   end
 
   create_table "properties", force: :cascade do |t|
@@ -49,13 +49,14 @@ ActiveRecord::Schema.define(version: 2020_03_16_010418) do
     t.text "image1"
     t.text "image2"
     t.text "image3"
-    t.text "seller_id"
+    t.integer "seller_id"
   end
 
   create_table "sellers", force: :cascade do |t|
     t.text "name"
-    t.text "email"
     t.text "phone_no"
+    t.text "email"
+    t.string "password_digest"
   end
 
 end
