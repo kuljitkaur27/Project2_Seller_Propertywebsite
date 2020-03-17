@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   # get 'seller/show'
   # get 'seller/edit'
   root :to => 'pages#search'
-  resources :sellers, :only => [:new,:create,:index,:show]
-  resources :properties, :only => [:new,:create,:index,:show]
+  resources :sellers     #, :only => [:new,:create,:index,:show]
+  resources :properties   #, :only => [:new,:create,:index,:show]
 end

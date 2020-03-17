@@ -1,3 +1,3 @@
 class Owner < ApplicationRecord
-belongs_to :sellers, :optional => true
+belongs_to :seller, :optional => true
 end

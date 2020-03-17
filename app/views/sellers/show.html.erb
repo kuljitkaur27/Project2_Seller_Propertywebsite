@@ -8,10 +8,10 @@
 
 <h2>Open Properties :</h2>
 <% @seller.properties.each do |property| %>
-  <%= link_to image_tag(property.main_image), edit_property_path(property) %>
+  <%= link_to image_tag(property.main_image), edit_property_path(property) if property.main_image.present? %>
 <% end %>
 
 <div class="controls">
-  <%= button_to 'Edit #{ @seller.name }', edit_seller_path(@seller) %>
-  <%= button_to "Delete #{ @seller.name }", @seller, :method => 'delete' %>
+  <%= link_to "Edit #{ @seller.name } Details", seller_path(@seller) %>
+  <%= link_to "Delete #{ @seller.name }", @seller, :method => 'delete' %>
 </div>

@@ -17,8 +17,8 @@ class SellersController < ApplicationController
   end
 
   def update
-    @seller = Seller.find params[:id]
-    Seller.update seller_params
+    seller = Seller.find params[:id]
+    seller.update seller_params
     redirect_to seller
   end
 
@@ -27,13 +27,13 @@ class SellersController < ApplicationController
   end
 
   def destroy
-    seller = Seller.find params[:id]
-    Seller.destroy
-    reditect_to seller_path
+    @seller = Seller.find params[:id]
+    @seller.destroy
+    redirect_to sellers_path
   end
 end
 
 private
  def seller_params
-   params.require(:seller).permit( :name, :phone_no, :email)
+   params.require(:seller).permit( :name, :phone_no, :email, :password_digest)
  end

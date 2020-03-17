@@ -1,0 +1,11 @@
+<h1>Properties.....</h1>
+
+<% @properties.each do |property| %>
+  <% if property.main_image %>
+  <%= link_to image_tag(property.main_image), property %>
+  <% else %>
+  <%= link_to image_tag('/assets/images.jpeg'), property %>
+  <% end %>
+
+<p>location : <%= property.location %></p>
+<% end %>
