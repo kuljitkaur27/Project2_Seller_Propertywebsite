@@ -13,6 +13,7 @@
     <nav>
     <%= link_to "Home", root_path %>
     |
+<<<<<<< HEAD
     <% if @current_user.present? %>
         <%= link_to "Sellers", sellers_path %>
         |
@@ -28,6 +29,14 @@
         <%= link_to "Sign in", login_path %>
     <% end %>
   </nav>
+=======
+    <%= link_to "Sellers", sellers_path %>
+    <%= link_to "New Seller", new_seller_path %>
+    |
+    <%= link_to "Properties", properties_path %>
+    <%= link_to "New Property", new_property_path %>
+    </nav>
+>>>>>>> parent of 0882ea8... version 3.3
     <%= yield %>
   </body>
 </html>
