@@ -1,6 +1,8 @@
 class PropertiesController < ApplicationController
+  before_action :fetch_email
+
   def index
-      # @properties = Property.all
+      # Search
       @properties = Property.where(nil)
       filtering_params(params).each do |key, value|
         @properties = @properties.public_send("filter_by_#{key}", value) if value.present?
@@ -37,6 +39,10 @@ class PropertiesController < ApplicationController
   end
 
 private
+def fetch_email
+
+end
+
 def property_params
   params.require(:property).permit(:location, :price, :construction_year, :property_type, :bedrooms, :bathrooms, :car_spaces, :landsize, :bonus_features, :status, :main_image, :image1, :image2, :image3, :seller_id)
 end

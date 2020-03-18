@@ -17,12 +17,12 @@
   <li>Status               : <%= @property.status %></li>
 </ul>
 
-<h3>Contact Details......</h3>
+<h2>Contact Details......</h2>
 <% if @property.seller.present?  %>
-<h2> Seller <%= @property.seller.name %> Details ....</h2>
+<h3> Seller <%= @property.seller.name %> Details ....</h3>
 <ul>
   <li>Phone_no      : <%= @property.seller.phone_no %></li>
-  <li>Email address : <%= @property.seller.email %></li>
+
 </ul>
 <% end %>
 

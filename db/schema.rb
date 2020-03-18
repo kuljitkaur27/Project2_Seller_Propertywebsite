@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_052707) do
   create_table "sellers", force: :cascade do |t|
     t.text "name"
     t.text "phone_no"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
