@@ -5,7 +5,7 @@
 <%= form_tag properties_path, :method => "get"  do %>
 
   <%= label_tag :Location %>
-  <%= text_field_tag :location, params[:location] %> <br>
+  <%= text_field_tag :location %> <br>
   <%= label_tag  :Price %>
   <%= number_field_tag :price %> <br>
   <%= label_tag  :Type %>
@@ -19,7 +19,7 @@
   <%= label_tag  :Landsize %>
   <%= number_field_tag :landsize%> <br>
 
-  <%= submit_tag "Search", name: nil %>
+  <%= submit_tag "Search", name: nil  %>
 <% end %>
 
 <!-- <form action="/properties" method="get">
