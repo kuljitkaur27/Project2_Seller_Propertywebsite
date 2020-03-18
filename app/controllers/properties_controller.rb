@@ -1,6 +1,10 @@
 class PropertiesController < ApplicationController
   def index
-    @properties = Property.all
+      # @properties = Property.all
+      @properties = Property.where(nil)
+      filtering_params(params).each do |key, value|
+        @properties = @properties.public_send("filter_by_#{key}", value) if value.present?
+      end
   end
 
   def new
@@ -36,5 +40,7 @@ private
 def property_params
   params.require(:property).permit(:location, :price, :construction_year, :property_type, :bedrooms, :bathrooms, :car_spaces, :landsize, :bonus_features, :status, :main_image, :image1, :image2, :image3, :seller_id)
 end
-
+def filtering_params(params)
+  params.slice(:location, :price, :property_type, :bedrooms, :bathrooms, :car_spaces, :landsize,)
+end
 end
