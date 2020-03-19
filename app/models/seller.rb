@@ -3,5 +3,5 @@ class Seller < ApplicationRecord
   # validates :email, :presence => true, :uniqueness => true
   has_many :properties
   has_many :owners
-  has_one :users
+  belongs_to :user, :inverse_of => :seller, :optional => true
 end

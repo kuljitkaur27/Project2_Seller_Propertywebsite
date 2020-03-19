@@ -21,8 +21,17 @@
 <% if @property.seller.present?  %>
 <h3> Seller <%= @property.seller.name %> Details ....</h3>
 <ul>
-  <li>Phone_no      : <%= @property.seller.phone_no %></li>
-
+  <li>Phone Number  : <%= @property.seller.phone_no %></li>
+  <li>Email Id      : <%= @property.seller.user.email %></li>
+  <li>Owners        :
+    <ul>
+    <% @property.seller.owners do |owner| %>
+    <li>Name          : <%= owner.name %></li>
+    <li>Phone Number  : <%= owner.phone_no %></li>
+    <li>Email Id      : <%= owner.email %></li>
+    <% end %>
+    </ul>
+    </li>
 </ul>
 <% end %>
 

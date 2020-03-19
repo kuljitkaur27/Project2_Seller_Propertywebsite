@@ -1,21 +1,15 @@
-<<<<<<< HEAD
-User.destroy_all
-u1 = User.create :email => 'john@ga.co', :password => 'chicken', :admin => true
-u2 = User.create :email => 'kuljit@ga.co', :password => 'chicken', :admin => false
-puts "#{ User.count } users created",
-
 
 Seller.destroy_all
 s1 =  Seller.create :name => "John", :phone_no => "0405060708"
 s2 =  Seller.create :name => "Kuljit", :phone_no => "0423456782"
-=======
-Seller.destroy_all
 
-s1 =  Seller.create :name => "John", :email => "John@ga.co", :phone_no => "0405060708", :password_digest => "Hello123"
-s2 =  Seller.create :name => "Kuljit", :email => "kuljitkauremail@gmail.com", :phone_no => "0423456782" , :password_digest => "sayhello123"
-
->>>>>>> parent of 0882ea8... version 3.3
 puts "#{ Seller.count } Sellers created"
+
+User.destroy_all
+u1 = User.create :email => "john@ga.co", :password => "chicken", :admin => true
+u2 = User.create :email => "kuljit@ga.co", :password => "chicken", :admin => false
+puts "#{ User.count } users created"
+
 
 Owner.destroy_all
 o1 = Owner.create :name => "John" , :email => "John@ga.co" , :phone_no => "0405060708"
@@ -40,10 +34,7 @@ puts "#{ Property.count } Properties created"
 
 
 # Associations ###############
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 0882ea8... version 3.3
 puts "Sellers and Properties"
 s1.properties << p1 << p3
 
@@ -55,5 +46,5 @@ b1.properties << p1 << p2
 p1.buyers << b1 << b2
 
 puts "Sellers and Users"
-u1.sellers << s1
-u2.sellers << s2
+s1.update :user_id => u1.id
+s2.update :user_id => u2.id

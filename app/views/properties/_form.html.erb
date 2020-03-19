@@ -26,7 +26,7 @@
   <%= f.label :Image3 %>
   <%= f.url_field :image3 %>
   <%= f.label :Status%>
-  <%= f.text_field :status %>
+  <%= f.text_field :status, :value => "Open" %>
   <%= f.label :Seller %>
   <%= f.select :seller_id, Seller.pluck(:name, :id), :include_blank => false %>
   <%= f.submit %>

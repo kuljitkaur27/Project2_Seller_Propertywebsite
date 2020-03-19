@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'session/new'
   get 'pages/index'
   get 'pages/list'
   # get 'pages/search'
@@ -11,6 +12,12 @@ Rails.application.routes.draw do
   # get 'seller/show'
   # get 'seller/edit'
   root :to => 'pages#search'
+  resources :users, :only => [:new,:create,:index]
+
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
+
   resources :sellers     #, :only => [:new,:create,:index,:show]
   resources :properties   #, :only => [:new,:create,:index,:show]
 end
