@@ -1,9 +1,7 @@
 class SessionController < ApplicationController
-#New Session
   def new
     end
 
-#Create Session
   def create
     user = User.find_by :email => params[:email]
     if user.present? && user.authenticate(params[:password])
@@ -15,9 +13,8 @@ class SessionController < ApplicationController
     end
   end
 
-#Destroy Session
   def destroy
     session[:user_id] = nil # Log the user out
-    redirect_to root_path
+    redirect_to login_path
   end
 end

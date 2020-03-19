@@ -1,63 +1,51 @@
 <h1>Welcome to Sydney Property Seller Site......</h1>
 
-<h2>Search for your Dream Home.....</h2>
+<h2 class="text-primary" >Search for your Dream Home.....</h2>
 
-<%= form_tag properties_path, :method => "get"  do %>
-
-  <%= label_tag :Location %>
-  <%= text_field_tag :location, params[:location] %> <br>
-  <%= label_tag  :Price %>
-  <%= number_field_tag :price %> <br>
-  <%= label_tag  :Type %>
-  <%= text_field_tag :property_type%> <br>
-  <%= label_tag  :Bedrooms %>
-  <%= number_field_tag :bedrooms%> <br>
-  <%= label_tag  :Bathrooms %>
-  <%= number_field_tag :bathrooms%> <br>
-  <%= label_tag  :Car_Spaces %>
-  <%= number_field_tag :car_spaces%> <br>
-  <%= label_tag  :Landsize %>
-  <%= number_field_tag :landsize%> <br>
-
-  <%= submit_tag "Search", name: nil %>
-<% end %>
-
-<!-- <form action="/properties" method="get">
-
-  <label>
-    Location :
-    <input type="text" name="location" > <br>
-  </label>
-
-  <label>
-    Price :
-    <input type="number" name="price"> <br>
-  </label>
-
-  <label>
-    Type:
-    <input type="text" name="property_type"> <br>
-  </label>
-
-  <label>
-    Bedrooms :
-    <input type="number" name="bedrooms"> <br>
-  </label>
-
-  <label>
-    Bathrooms :
-    <input type="number" name="bathrooms"> <br>
-  </label>
-
-  <label>
-    Car Spaces :
-    <input type="number" name="car_spaces"> <br>
-  </label>
-
-  <label>
-    Landsize:
-    <input type="number" name="landsize"> <br>
-  </label>
-
-
-</form> -->
+  <%= form_tag properties_path, :method => "get", :html => {:class => "form-horizontal center"}  do %>
+    <div class="form-group">
+    <%= label_tag :Location %>
+     <div class="col-md-8">
+       <%= text_field_tag :location %> <br>
+    </div>
+    </div>
+    <div class="form-group" >
+    <%= label_tag  :Price %>
+    <div class="col-md-8">
+      <%= number_field_tag :price  %> <br>
+    </div>
+    </div>
+    <div class="form-group" >
+    <%= label_tag  :Type %>
+    <div class="col-md-8">
+      <%= text_field_tag :property_type %> <br>
+    </div>
+    </div>
+    <div class="form-group" >
+    <%= label_tag  :Bedrooms %>
+    <div class="col-md-8">
+      <%= number_field_tag :bedrooms %> <br>
+    </div>
+    </div>
+    <div class="form-group" >
+    <%= label_tag  :Bathrooms %>
+    <div class="col-md-8">
+      <%= number_field_tag :bathrooms  %> <br>
+    </div>
+    </div>
+    <div class="form-group" >
+    <%= label_tag  :Car_Spaces %>
+    <div class="col-md-8">
+      <%= number_field_tag :car_spaces %> <br>
+    </div>
+    </div>
+    <div class="form-group" >
+    <%= label_tag  :Landsize %>
+    <div class="col-md-8">
+      <%= number_field_tag :landsize %> <br>
+    </div>
+    </div>
+    <div>
+    <%= submit_tag "Search", name: nil , class: "btn btn-primary btn-lg ", 'data-toggle': "tooltip", 'data-placement': "bottom", title: "Search" %>
+    </div>
+  <% end %>

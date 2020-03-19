@@ -1,12 +1,19 @@
-<h1><%= @seller.name %> Details.....</h1>
-
-<h2>Personal Information :</h2>
+<h3><%= @seller.name %> Details.....</h3>
+<div>
+<h4>Personal Information :</h4>
 <ul>
   <li>Phone_no      : <%= @seller.phone_no %></li>
-
+  <li>Owners linked :  </li> 
+  <ul>
+  <% @seller.owners do |owner| %>
+  <li>Name          : <%= owner.name %></li>
+  <li>Phone Number  : <%= owner.phone_no %></li>
+  <li>Email Id      : <%= owner.email %></li>
+  <% end %>
+  </ul>
 </ul>
-
-<h2>Open Properties :</h2>
+</div>
+<h4>Open Properties :</h4>
 <% @seller.properties.each do |property| %>
   <% if property.main_image.present? %>
   <%= link_to image_tag(property.main_image), property %>

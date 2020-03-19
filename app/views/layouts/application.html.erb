@@ -10,26 +10,34 @@
   </head>
 
   <body>
-    <nav>
-    <%= link_to "Home", root_path %>
-    |
+    <div class="container">
+      <nav>
+      <%= link_to "Home", root_path %>
+      |
 
-    <% if @current_user.present? %>
-        <%= link_to "Sellers", sellers_path %>
-        |
-        <%= link_to "Properties", properties_path %>
-        |
-        <%= link_to "New Property", new_property_path %>
-        |
-        <%= link_to "All users", users_path if @current_user.admin? %>
-        <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
+      <% if @current_user.present? %>
+          <%= link_to "Sellers", sellers_path %>
+          |
+          <% if @current_user.admin %>
+            <%= link_to "New Seller", new_seller_path %>
+            |
+          <% end %>
 
-    <% else %>
-        <%= link_to "Sign up", new_user_path %>
-        <%= link_to "Sign in", login_path %>
-    <% end %>
-  </nav>
+          <%= link_to "Properties", properties_path %>
+          |
+          <%= link_to "New Property", new_property_path %>
+          |
+          <%= link_to "All users", users_path if @current_user.admin? %>
+          <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
 
-    <%= yield %>
+      <% else %>
+          <%= link_to "Sign up", new_user_path %>
+          <%= link_to "Sign in", login_path %>
+      <% end %>
+    </nav>
+
+      <%= yield %>
+    </div>
+
   </body>
 </html>

@@ -8,21 +8,18 @@
   </ol>
 <% end %>
 
+<div class="form-group">
 <%= form_for @user do |f| %>
-  <fieldset>
-    <%= f.label :email %>
-    <%= f.email_field :email, :required => true, :autofocus => true %>
-  </fieldset>
 
-  <fieldset>
-    <%= f.label :password %>
-    <%= f.password_field :password, :required => true %>
-  </fieldset>
-
-  <fieldset>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, :required => true %>
-  </fieldset>
-
-  <%= f.submit "Sign up!" %>
+    <%= f.label :email, :class=>"form-control col-md-4" %>
+    <%= f.email_field :email, :required => true, :autofocus => true, :class=>"form-control col-md-4 was-validated" %>
+    <br>
+    <%= f.label :password, :class=>"form-control col-md-4" %>
+    <%= f.password_field :password, :required => true, :class=>"form-control col-md-4 was-validated" %>
+    <br>
+    <%= f.label :password_confirmation, :class=>"form-control col-md-4" %>
+    <%= f.password_field :password_confirmation, :required => true, :class=>"form-control col-md-4 was-validated" %>
+    <br>
+  <%= f.submit "Sign up!", :class => 'btn btn-primary btn-lg' %>
 <% end %>
+</div>

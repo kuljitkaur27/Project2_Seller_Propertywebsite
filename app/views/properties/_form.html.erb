@@ -1,33 +1,51 @@
+<div class="form-group">
 <%= form_for @property do |f| %>
-  <%= f.label :Location %>
-  <%= f.text_field :location %>
-  <%= f.label :Price %>
-  <%= f.number_field :price %>
-  <%= f.label :Construction_Year %>
-  <%= f.text_field :construction_year %>
-  <%= f.label :Type %>
-  <%= f.text_field :property_type%>
-  <%= f.label :Bedrooms %>
-  <%= f.number_field :bedrooms%>
-  <%= f.label :Bathrooms %>
-  <%= f.number_field :bathrooms%>
-  <%= f.label :Car_Spaces %>
-  <%= f.number_field :car_spaces%>
-  <%= f.label :Landsize %>
-  <%= f.number_field :landsize%>
-  <%= f.label :Bonus_Features %>
-  <%= f.text_field :bonus_features%>
-  <%= f.label :Image %>
-  <%= f.url_field :main_image %>
-  <%= f.label :Image1 %>
-  <%= f.url_field :image1 %>
-  <%= f.label :Image2 %>
-  <%= f.url_field :image2 %>
-  <%= f.label :Image3 %>
-  <%= f.url_field :image3 %>
-  <%= f.label :Status%>
-  <%= f.text_field :status, :value => "Open" %>
-  <%= f.label :Seller %>
-  <%= f.select :seller_id, Seller.pluck(:name, :id), :include_blank => false %>
-  <%= f.submit %>
+<div class="form-inline">
+  <%= f.label :Location, :class=>"form-control col-md-2"%>
+  <%= f.text_field :location, :class=>"form-control col-md-4" %>
+  <%= f.label :Price, :class=>"form-control col-md-2" %>
+  <%= f.number_field :price, :class=>"form-control col-md-4" %>
+</div>
+<div class="form-inline">
+  <%= f.label :Construction_Year, :class=>"form-control col-md-2" %>
+  <%= f.text_field :construction_year, :class=>"form-control col-md-4" %>
+  <%= f.label :Type, :class=>"form-control col-md-2" %>
+  <%= f.text_field :property_type, :class=>"form-control col-md-4" %>
+</div>
+<div class="form-inline">
+  <%= f.label :Bedrooms, :class=>"form-control col-md-2" %>
+  <%= f.number_field :bedrooms, :class=>"form-control col-md-4" %>
+  <%= f.label :Bathrooms, :class=>"form-control col-md-2" %>
+  <%= f.number_field :bathrooms, :class=>"form-control col-md-4" %>
+</div>
+<div class="form-inline">
+  <%= f.label :Car_Spaces, :class=>"form-control col-md-2" %>
+  <%= f.number_field :car_spaces, :class=>"form-control col-md-4" %>
+  <%= f.label :Landsize, :class=>"form-control col-md-2" %>
+  <%= f.number_field :landsize, :class=>"form-control col-md-4" %>
+</div>
+<div class="form-inline">
+  <%= f.label :Bonus_Features, :class=>"form-control col-md-2" %>
+  <%= f.text_field :bonus_features, :class=>"form-control col-md-4" %>
+  <%= f.label :Image, :class=>"form-control col-md-2" %>
+  <%= f.url_field :main_image, :class=>"form-control col-md-4" %>
+</div>
+  <div class="form-inline">
+    <%= f.label :Image1, :class=>"form-control col-md-2" %>
+    <%= f.url_field :image1, :class=>"form-control col-md-4" %>
+    <%= f.label :Image2, :class=>"form-control col-md-2" %>
+    <%= f.url_field :image2, :class=>"form-control col-md-4" %>
+  </div>
+  <div class="form-inline">
+    <%= f.label :Image3, :class=>"form-control col-md-2" %>
+    <%= f.url_field :image3, :class=>"form-control col-md-4" %>
+    <%= f.label :Status, :class=>"form-control col-md-2" %>
+    <%= f.text_field :status, :value => "Open" , :class=>"form-control col-md-4" %>
+  </div>
+  <div class="form-inline">
+    <%= f.label :Seller, :class=>"form-control col-md-2" %>
+    <%= f.select :seller_id, Seller.pluck(:name, :id), :include_blank => false %>
+  </div>
+  <%= f.submit class: "btn btn-primary btn-lg" %>
 <% end %>
+</div>
