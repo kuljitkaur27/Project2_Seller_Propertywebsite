@@ -66,7 +66,7 @@
 </div>
 <ul>
   <li>Phone Number  : <%= @property.seller.phone_no %></li>
-  <li>Email Id      : <%= link_to @property.seller.user.email %></li>
+  <li>Email Id      : <%= link_to @property.seller.user.email, "mailto:#{ @property.seller.user.email } " %></li>
   <div class = "container p-3 my-3 bg-info text-white container-md border text-dark ">
   <li>Owners of the property       :
     <ul>
@@ -85,8 +85,10 @@
 
 
 <% if @current_user.present? %>
+
 <div class="controls">
 <div class="badge badge-success">  <%= link_to "Edit Property", edit_property_path(@property) %> </div>
 <div class="badge badge-pill badge-danger" >  <%= button_to "Delete Property", @property, :method => 'delete', :data => { :confirm => 'Are you sure?' } %> </div>
 </div>
+
 <% end %>

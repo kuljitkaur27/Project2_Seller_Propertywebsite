@@ -3,7 +3,7 @@
 <h4>Personal Information :</h4>
 <ul>
   <li>Phone_no      : <%= @seller.phone_no %></li>
-  <li>Owners linked :  </li> 
+  <li>Owners linked :  </li>
   <ul>
   <% @seller.owners do |owner| %>
   <li>Name          : <%= owner.name %></li>
@@ -22,7 +22,8 @@
   <% end %>
 <% end %>
 
-<div class="controls">
-  <%= link_to "Edit Details", edit_seller_path(@seller) %>
-  <%= link_to "Delete #{ @seller.name }", @seller, :method => 'delete' %>
-</div>
+
+  <div class="controls">
+    <%= link_to "Edit Details", edit_seller_path(@seller) %>
+    <%= link_to "Delete #{ @seller.name }", @seller, :method => 'delete' %>
+  </div>

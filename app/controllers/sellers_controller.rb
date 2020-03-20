@@ -1,10 +1,12 @@
 class SellersController < ApplicationController
 #Index
   def index
+
     @sellers = Seller.where(nil)
         filtering_params(params).each do |key, value|
-          @sellers = @sellers.public_send("filter_by_#{key}", value) if value.present?
+          @sellers = @sellers.public_send("filter_by_#{key}",value.to_i) if value.present?
         end
+
   end
 
 #New Seller
